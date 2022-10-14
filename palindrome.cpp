@@ -1,33 +1,22 @@
-#include<stdio.h>
-#include<string.h>
+#include<iostream>
+using namespace std;
 int main()
 {
-	char str[20];
-	int i,c,len,temp =0;
-	int flag =0;
-	printf("enter your choice 1 or 2:");
-	scanf("%d",&c);
-	printf("enter any input:");
-	scanf("%s",str);
-	len =strlen(str);
-	for(i =0;i<len;i++){
-		if(str[i]!= str[len-i-1]){
-			temp =1;
-			break;
-		}
+	int n ,digit,num,rev=0;
+	cout<<"enter the positive number: ";
+	cin>>num;
+	n = num;
+	do
+	{
+		digit = num % 10;
+		rev = (rev*10) + digit;
+		num = num / 10;
 	}
-	if(c==1){
-		if(temp ==0){
-			printf("the given string is a palindrome");
-		}else{
-			printf("given string is not a palindrome");
-		}
-	}else{
-		if(temp==0){
-			printf("given number is a palindrome");
-		}
-		else{
-			printf("given number is not a palindrome");
-		}
-	}return 0;
+	while(num != 0);
+	cout<<"the reverse number is :"<<rev<<endl;
+	  if(n == rev)
+	  cout<<"the number is a palindrome. ";
+	  else
+	  cout<<"the numgeris a not a plindrome.";
+	  return 0;
 }
